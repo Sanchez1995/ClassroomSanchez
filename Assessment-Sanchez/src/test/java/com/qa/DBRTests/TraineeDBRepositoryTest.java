@@ -50,27 +50,23 @@ public class TraineeDBRepositoryTest {
 		System.out.println(repo.getAllTrainees());
 		Assert.assertEquals(MOCK_DATA_ARRAY, repo.getAllTrainees());
 	}
-}
 
-/*
- * @Test public void testCreateTrainee() {
- * Mockito.when(service.createTrainee(MOCK_VALUE)).thenReturn(MOCK_VALUE);
- * Assert.assertEquals(MOCK_VALUE, endpoint.createTrainee(MOCK_VALUE));
- * Mockito.verify(service).createTrainee(MOCK_VALUE);
- * 
- * }
- * 
- * @Test public void testUpdateTrainee() {
- * 
- * }
- * 
- * @Test public void testDeleteTrainee() {
- * Mockito.when(service.deleteTrainee(1L)).thenReturn(MOCK_VALUE);
- * Assert.assertEquals(MOCK_VALUE, endpoint.deleteTrainee(1L));
- * Mockito.verify(service).deleteTrainee(1L);
- * 
- * }
- * 
- * 
- * }
- */
+	@Test
+	public void testCreateTrainee() {
+		String reply = repo.createTrainee(MOCK_OBJECT);
+		Assert.assertEquals(reply, "{\"message\": \"trainee has been sucessfully added\"}");
+
+	}
+
+	/*
+	 * @Test public void testUpdateTrainee() {
+	 * 
+	 * }
+	 */
+
+	@Test
+	public void testDeleteTrainee() {
+		String reply = repo.deleteTrainee(1L);
+		Assert.assertEquals(reply,"{\"message\": \"trainee has been sucessfully deleted\"}");
+	}
+}
